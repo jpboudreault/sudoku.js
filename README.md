@@ -1,16 +1,13 @@
-Sudoku.js
+Fork from Sudoku.js
 ==========
 
-A Sudoku puzzle **generator** and **solver** JavaScript library.
-
-Check out the [online demo][demo] to see it in action.
+A Sudoku puzzle **generator** and **solver** JavaScript project to teach kids basic coding.
 
 Implementation ideas borrowed from
+[Sudoku.js][sudoku.js]
 ["Solving Every Sudoku Puzzle"][norvig-sudoku] by 
 [Peter Norvig][norvig], and a [generator/solver][anderson-sudoku] by 
 [Michael Anderson][anderson].
-
-[demo]:http://htmlpreview.github.io/?https://github.com/robatron/sudoku.js/blob/master/demo/index.html
 
 Intro
 --------------------------------------------------------------------------------
@@ -190,6 +187,7 @@ References:
 [anderson-sudoku]: https://github.com/andermic/cousins/tree/master/sudoku
 [stuart-sudoku]: http://www.sudokuwiki.org/sudoku.htm
 [95-sudokus]: http://magictour.free.fr/top95
+[sudoku.js]: https://github.com/robatron/sudoku.js
 [norvig]: http://norvig.com
 [anderson]: https://github.com/andermic/
 
@@ -199,8 +197,6 @@ License:
 --------
 
 The MIT License (MIT)
-
-Copyright (c) 2014 Rob McGuire-Dale
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

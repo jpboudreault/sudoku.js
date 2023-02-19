@@ -1,9 +1,3 @@
-/* 
-    Quick-n-dirty demo page for Sudoku.js.
-
-    For more information, please see https://github.com/robatron/sudoku.js
-*/
-
 // Selectors
 var BOARD_SEL = "#sudoku-board";
 var TABS_SEL = "#generator-tabs";

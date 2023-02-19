@@ -1,12 +1,3 @@
-/*
-    Sudoku.js
-    ---------
-
-    A Sudoku puzzle generator and solver JavaScript library.
-
-    Please see the README for more details.
-*/
-
 (function(root){
     var sudoku = root.sudoku = {};  // Global reference to the sudoku library
 
