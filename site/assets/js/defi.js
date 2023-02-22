@@ -18,7 +18,7 @@
     * En JavaScript une chaine de caractère est appelée String et est délimitée au début et à la fin par "" ou ''
     * Dans cet exercice retourne la valeur salut.
     */
-    defi.returneChaine = function(){
+    defi.retourneChaine = function(){
        // ton code ici
     };
 
@@ -29,7 +29,7 @@
      * Chaque case peut avoir une valeur de 1 à 9 ou être inconnue ce qui est représenté par un '.'
      * Retourne une chaine avec les 81 caractères.
      */
-    defi.returneSudoku = function(){
+    defi.retourneSudoku = function(){
        // ton code ici
     };
 
