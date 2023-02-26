@@ -186,6 +186,9 @@
     /*
      * Ajuste to code pour retourner une chaine qui représente n'importe quel bloc du sudoku
      * N'oublie pas que le premier bloc est 0 et le dernier 8
+     *
+     * La fonction Math.floor() arrondi un nombre décimal à l'entier inférieur
+     * L'opérateur '%' retourne le reste d'une division    ex.:    7 % 3  donne  1
      */
     defi.retourneUnBloc = function(sudoku, bloc){
        // ton code ici
@@ -200,6 +203,58 @@
       return s;
     };
 
+
+
+
+
+    /*
+     * Ajuste to code pour retourner une chaine qui représente n'importe quel bloc du sudoku
+     * N'oublie pas que le premier bloc est 0 et le dernier 8
+     */
+    defi.retourneUnBloc = function(sudoku, bloc){
+       // ton code ici
+      var s = [];
+      var ligneOffset = Math.floor(bloc / 3);
+      var colOffset = bloc % 3;
+      for (let i = 0; i < 3; i++) {
+         for (let j = 0; j < 3; j++) {
+            s.push(sudoku[ligneOffset*3+i][colOffset*3+j]);
+        }
+      }
+      return s;
+    };
+
+
+
+
+
+    /*
+     * Crée une fonction qui indique si un tableau de 9 éléments est valide. Est-ce que l'un des éléments est présent plus d'une fois?
+     *
+     * En JavaScript on indique une valeur binaire par 'true' ou 'false', c'est ce que la fonction doit retourner.
+     *
+     * Il est possible de réussir cet exercice de plusieurs façons, une facon élégante de connaitre le nombre unique d'élément dans
+     * un tableau est exposée ici https://stackoverflow.com/a/44405494/570308
+     *
+     * Tu auras peut-etre aussi besoin d'utiliser un bloc si (if) voir ici pour plus d'information
+     * https://www.w3schools.com/js/js_if_else.asp
+     */
+    defi.tableauValide = function(bloc){
+       // ton code ici
+        return new Set(bloc).size == 9 && bloc.length == 9;
+    }
+
+
+
+
+    /*
+     * Crée une fonction qui indique si tout le sudoku est valide. Cette fonction doit retourner une valeur binaire.
+     *
+     * Tu auras probablement à utiliser des fonctions que tu as définies précédemment. Apelle les avec "defi.function();"
+     */
+    defi.sudokuValide = function(sudoku){
+        // ton code ici
+    }
 
 
 
