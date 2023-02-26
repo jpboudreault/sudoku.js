@@ -10,7 +10,6 @@
      */
     defi.retourneUn = function(){
         // ton code ici
-        return 1;
     };
 
 
@@ -22,7 +21,6 @@
     */
     defi.retourneUneChaine = function(){
        // ton code ici
-       return "salut";
     };
 
 
@@ -36,7 +34,6 @@
      */
     defi.retourneUnTableau = function(){
        // ton code ici
-       return ["1", "2","3","4","5","6","7","8","9"];
     };
 
 
@@ -49,7 +46,6 @@
      */
     defi.retourneUnArgument = function (argument1) {
         // ton code ici
-        return argument1;
     };
 
 
@@ -68,12 +64,7 @@
      * L'utilisation d'une boucle for est requise https://www.w3schools.com/js/js_loop_for.asp
      */
     defi.calculeUneValeurTemporaire = function () {
-    // ton code ici
-        var x = 0;
-        for (let i = 0; i <= 50; i++) {
-            x += i;
-        }
-        return x;
+        // ton code ici
     };
 
 
@@ -90,11 +81,6 @@
      */
     defi.retourneLaPremiereLigne = function(sudoku){
        // ton code ici
-       var s = [];
-       for (let i = 0; i < 9; i++) {
-         s[i] = sudoku[0][i];
-       }
-       return s;
     };
 
 
@@ -112,11 +98,6 @@
      */
     defi.retourneUneLigne = function(sudoku, ligne){
        // ton code ici
-       var s = [];
-       for (let i = 0; i < 9; i++) {
-         s[i] = sudoku[ligne][i];
-       }
-       return s;
     };
 
 
@@ -128,11 +109,6 @@
      */
     defi.retourneLaPremiereColone = function(sudoku){
        // ton code ici
-      var s = [];
-       for (let i = 0; i < 9; i++) {
-         s[i] = sudoku[i][0];
-       }
-       return s;
     };
 
 
@@ -148,11 +124,7 @@
      *    3,0   3,1    3,2  ...
      */
     defi.retourneUneColone = function(sudoku, colonne){
-      var s = [];
-       for (let i = 0; i < 9; i++) {
-         s[i] = sudoku[i][colonne];
-       }
-       return s;
+        // ton code ici
     };
 
 
@@ -171,13 +143,6 @@
      */
     defi.retourneLePremierBloc = function(sudoku){
         // ton code ici
-        var s = [];
-        for (let i = 0; i < 3; i++) {
-           for (let j = 0; j < 3; j++) {
-                s.push(sudoku[i][j]);
-            }
-        }
-        return s;
     };
 
 
@@ -192,15 +157,6 @@
      */
     defi.retourneUnBloc = function(sudoku, bloc){
        // ton code ici
-      var s = [];
-      var ligneOffset = Math.floor(bloc / 3);
-      var colOffset = bloc % 3;
-      for (let i = 0; i < 3; i++) {
-         for (let j = 0; j < 3; j++) {
-            s.push(sudoku[ligneOffset*3+i][colOffset*3+j]);
-        }
-      }
-      return s;
     };
 
 
@@ -213,15 +169,6 @@
      */
     defi.retourneUnBloc = function(sudoku, bloc){
        // ton code ici
-      var s = [];
-      var ligneOffset = Math.floor(bloc / 3);
-      var colOffset = bloc % 3;
-      for (let i = 0; i < 3; i++) {
-         for (let j = 0; j < 3; j++) {
-            s.push(sudoku[ligneOffset*3+i][colOffset*3+j]);
-        }
-      }
-      return s;
     };
 
 
@@ -241,7 +188,6 @@
      */
     defi.tableauValide = function(bloc){
        // ton code ici
-        return new Set(bloc).size == 9 && bloc.length == 9;
     }
 
 
