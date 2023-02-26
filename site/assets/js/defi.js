@@ -22,20 +22,21 @@
     */
     defi.retourneUneChaine = function(){
        // ton code ici
-       return "2";
+       return "salut";
     };
 
 
 
 
     /*
-     * Un sudoku a 81 cases. Dans ce jeu les valeurs des cases sont contenues dans une chaine de caracteres (String).
+     * Un sudoku a 81 cases. Dans ce jeu les valeurs des cases sont contenues dans un tableau deux dimenstions [ligne][col].
      * Chaque case peut avoir une valeur de 1 à 9 ou être inconnue ce qui est représenté par un '.'
-     * Dans cet exercice retourne une chaine avec les 81 caractères.
+     * Dans cet exercice retourne un tableau de 9 éléments qui contient en chaque position de une valeur entre 1 et 9 ou le .
+     * Un tableau est représenté par des [] avec une virgule entre chaque element.
      */
-    defi.retourneUnSudoku = function(){
+    defi.retourneUnTableau = function(){
        // ton code ici
-       return "012345678901234567890123456789012345678901234567890123456789012345678901234567891";
+       return ["1", "2","3","4","5","6","7","8","9"];
     };
 
 
@@ -53,16 +54,6 @@
 
 
 
-
-    /*
-     * Dans cet exercice tu dois retourner une chaine de charactère qui combine les deux arguments.
-     * Tu peux additionner des chaines avec l'opérateur +
-     */
-    defi.additionneDeuxChaines = function (chaine1, chaine2) {
-        // ton code ici
-        return chaine1 + chaine2;
-    };
-
     /*
      * Tu peux conserver une valeur intermedaire dans une variable de fonction. Définie la variable avec var. C'est utile pour contenir des valeurs
      * temporaires quand une fonction doit faire des calculs en plusieurs étapes.
@@ -76,7 +67,7 @@
      *  Dans cet exercice retourne la somme des nombres de 0 à 50 inclusivement
      * L'utilisation d'une boucle for est requise https://www.w3schools.com/js/js_loop_for.asp
      */
-    defi.gardeUneValeurTemporaire = function () {
+    defi.calculeUneValeurTemporaire = function () {
     // ton code ici
         var x = 0;
         for (let i = 0; i <= 50; i++) {
@@ -90,19 +81,19 @@
 
     /*
      * Dans cet exercice, tu dois extraire les valeurs de la première ligne d'une chaine de sudoku.
-     * Ta fonction recoit une valeur en argument nommée 'sudoku' qui contient 81 charactères
+     * Ta fonction recoit une valeur en argument nommée 'sudoku' qui contient un tableau deux dimension de 81 charactères.
      *
-     * On peut accéder à un caratère dans une chaine par sa position en l'accedant comme un tableau [] ou par la fonction charAt() . ex chaine[2] donne le 3e caractère
+     * On peut accéder à un caratère dans le tableau par sa colonne et sa ligne [ligne][col].
      * Note que les elements dans les tableaux sont 0 based (le 1er élément est à la position 0)
      *
      * L'utilisation d'une boucle for est fortement recommandée https://www.w3schools.com/js/js_loop_for.asp
      */
-    defi.retournePremiereLigne = function(sudoku){
+    defi.retourneLaPremiereLigne = function(sudoku){
        // ton code ici
-       var s = "";
+       var s = [];
        for (let i = 0; i < 9; i++) {
-         s += sudoku[i];
-      }
+         s[i] = sudoku[0][i];
+       }
        return s;
     };
 
@@ -111,19 +102,20 @@
 
     /*
      * Dans cet exercice, tu dois extraire les valeurs d'une ligne sécifique du sudoku. L'argument ligne est le numéro de la ligne moins un.
+     *
      * L'utilisation d'une boucle for est nécessaire https://www.w3schools.com/js/js_loop_for.asp
      *
      * Pense aux index des élements que tu souhaite avoir.
-     *    0   1    2  ...
-     *    9   10  11  ...
-     *    18  19  20  ...
+     * Pense aux index des élements que tu souhaite avoir.
+     *    0,0   0,1    0,2  ...
+     *    1,0   1,1    1,2  ...
      */
     defi.retourneUneLigne = function(sudoku, ligne){
        // ton code ici
-       var s = "";
+       var s = [];
        for (let i = 0; i < 9; i++) {
-         s += sudoku[i + 9*ligne];
-      }
+         s[i] = sudoku[ligne][i];
+       }
        return s;
     };
 
@@ -132,14 +124,14 @@
 
 
     /*
-     * Retroune une chaine qui représente la première colonne du sudoku. Pense aux index des élements que tu cherches.
+     * Retroune un tableau qui représente la première colonne du sudoku. Pense aux index des élements que tu cherches.
      */
-    defi.retournePremiereColone = function(sudoku){
+    defi.retourneLaPremiereColone = function(sudoku){
        // ton code ici
-       var s = "";
+      var s = [];
        for (let i = 0; i < 9; i++) {
-         s += sudoku[9*i];
-      }
+         s[i] = sudoku[i][0];
+       }
        return s;
     };
 
@@ -148,14 +140,18 @@
 
 
     /*
-     * Retroune une chaine qui une colonne du sudoku. Pense aux index des élements que tu cherches.
+     * Retroune un tableau qui represente une colonne du sudoku.
+     * Pense aux index des élements que tu cherches.
+     *    0,0   0,1    0,2  ...
+     *    1,0   1,1    1,2  ...
+     *    2,0   2,1    2,2  ...
+     *    3,0   3,1    3,2  ...
      */
     defi.retourneUneColone = function(sudoku, colonne){
-       // ton code ici
-       var s = "";
+      var s = [];
        for (let i = 0; i < 9; i++) {
-         s += sudoku[9*i + colonne];
-      }
+         s[i] = sudoku[i][colonne];
+       }
        return s;
     };
 
@@ -163,22 +159,25 @@
 
 
     /*
-     * Retourne une chaine qui représente les élements du premier bloc de 9 cases du sudoku
+     * Retourne un tableau qui représente les élements du premier bloc de 9 cases du sudoku
      *
      * Pense aux index des élements que tu souhaite avoir.
-     *    0   1    2  ...
-     *    9   10  11  ...
-     *    18  19  20  ...
+     *    0,0   0,1    0,2  ...
+     *    1,0   1,1    1,2  ...
+     *    2,0   2,1    2,2  ...
+     *
+     * Pour remplir ton tableau de résultat il est mieux d'utiliser la fonction .push(valeur) qu'un index.
+     * Voir https://www.w3schools.com/js/js_array_methods.asp#:~:text=JavaScript%20Array%20push()
      */
-    defi.retournePremierBloc = function(sudoku){
-       // ton code ici
-      var s = "";
-      for (let i = 0; i < 3; i++) {
-         for (let j = 0; j < 3; j++) {
-            s += sudoku[j + 9 * i];
+    defi.retourneLePremierBloc = function(sudoku){
+        // ton code ici
+        var s = [];
+        for (let i = 0; i < 3; i++) {
+           for (let j = 0; j < 3; j++) {
+                s.push(sudoku[i][j]);
+            }
         }
-      }
-      return s;
+        return s;
     };
 
 
@@ -186,16 +185,16 @@
 
     /*
      * Ajuste to code pour retourner une chaine qui représente n'importe quel bloc du sudoku
+     * N'oublie pas que le premier bloc est 0 et le dernier 8
      */
     defi.retourneUnBloc = function(sudoku, bloc){
        // ton code ici
-      var s = "";
-      var colOffset = Math.floor(bloc / 3);
-      var ligneOffset = bloc % 3;
+      var s = [];
+      var ligneOffset = Math.floor(bloc / 3);
+      var colOffset = bloc % 3;
       for (let i = 0; i < 3; i++) {
          for (let j = 0; j < 3; j++) {
-            let x = j + colOffset * 3 + 9 * (i + ligneOffset * 3);
-            s += sudoku[x];
+            s.push(sudoku[ligneOffset*3+i][colOffset*3+j]);
         }
       }
       return s;
