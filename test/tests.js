@@ -19,6 +19,21 @@ test("retourneUnSudoku", function(){
     ok(s.length == 81 , s.length + " -> 81");
 });
 
+test("retourneUnArgument", function(){
+    var s = defi.retourneUnArgument("abcd");
+    ok(s ===  "abcd", s + " -> 'abcd'");
+});
+
+test("additionneDeuxChaines", function(){
+    var s = defi.additionneDeuxChaines("abcd", "efg");
+    ok(s ===  "abcdefg", s + " -> 'abcdefg'");
+});
+
+test("gardeUneValeurTemporaire", function(){
+    var s = defi.gardeUneValeurTemporaire();
+    ok(s ===  1275, s + " -> " + 1275);
+});
+
 test("retournePremiereLigne", function(){
     var s = defi.retournePremiereLigne(puzz[1]);
     ok(s ===  "174589362", s + " -> '174589362'");
