@@ -621,6 +621,10 @@
     // Utility
     // -------------------------------------------------------------------------
 
+    sudoku.imprimeTableau = function(board){
+        sudoku.print_board(board);
+    }
+
     sudoku.print_board = function(board){
         /* Print a sudoku `board` to the console.
         */

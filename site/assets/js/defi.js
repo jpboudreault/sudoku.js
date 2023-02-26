@@ -201,4 +201,31 @@
     };
 
 
+
+
+
+
+    /*
+     * Cet exercice n'est pas prêt encore
+     */
+    defi.calculeChoix = function(s){
+        alert('Pas encore disponible!');
+    }
+
+    /*
+     * Cet exercice n'est pas prêt encore
+     */
+    defi.simplifie = function(s){
+        alert('Pas encore disponible!');
+        sudoku.imprimeTableau(s);
+    }
+
+    /*
+     * Cet exercice n'est pas prêt encore
+     */
+    defi.resoudre = function(s){
+        alert('Pas encore disponible!');
+        sudoku.imprimeTableau(s);
+    }
+
 })(this);

@@ -182,8 +182,9 @@ var solve_puzzle = function(puzzle){
         var error = false;
         try{
             var solved_board = 
-                sudoku.solve(sudoku.board_grid_to_string(boards[puzzle]));
+                defi.resoudre(sudoku.board_grid_to_string(boards[puzzle]));
         } catch(e) {
+            console.error(e);
             error = true;
         }
         
@@ -194,8 +195,8 @@ var solve_puzzle = function(puzzle){
             $(MESSAGE_SEL).hide();
         } else {
             $(MESSAGE_SEL + " #text")
-                .html("<strong>Unable to solve!</strong> "
-                    + "Check puzzle and try again.");
+                .html("<strong>Impossible à résoudre!</strong> "
+                    + "vérifiez le puzzle et le programme.");
             $(MESSAGE_SEL).show();
         }
     }
@@ -212,10 +213,11 @@ var get_candidates = function(puzzle){
         var error = false;
         try{
             var candidates = 
-                sudoku.get_candidates(
+                defi.calculeChoix(
                     sudoku.board_grid_to_string(boards[puzzle])
                 );
         } catch(e) {
+            console.error(e);
             error = true;
         }
         
@@ -226,8 +228,8 @@ var get_candidates = function(puzzle){
             $(MESSAGE_SEL).hide();
         } else {
             $(MESSAGE_SEL + " #text")
-                .html("<strong>Unable to display candidates!</strong> " +
-                    "Contradictions encountered. Check puzzle and try again.");
+                .html("<strong>Impossible de présenter les choix!</strong> " +
+                    "vérifiez le puzzle et le programme.");
             $(MESSAGE_SEL).show();
         }
     }

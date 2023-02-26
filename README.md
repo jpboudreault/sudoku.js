@@ -3,11 +3,10 @@ Fork from Sudoku.js
 
 A Sudoku puzzle **generator** and **solver** JavaScript project to teach kids basic coding.
 
-Implementation ideas borrowed from
-[Sudoku.js][sudoku.js]
-["Solving Every Sudoku Puzzle"][norvig-sudoku] by 
-[Peter Norvig][norvig], and a [generator/solver][anderson-sudoku] by 
-[Michael Anderson][anderson].
+Implementation ideas borrowed from : 
+* [Sudoku.js][sudoku.js] by [Rob McGuire][robatron]
+* ["Solving Every Sudoku Puzzle"][norvig-sudoku] by [Peter Norvig][norvig]
+* [generator/solver][anderson-sudoku] by [Michael Anderson][anderson].
 
 Intro
 --------------------------------------------------------------------------------
@@ -189,6 +188,7 @@ References:
 [95-sudokus]: http://magictour.free.fr/top95
 [sudoku.js]: https://github.com/robatron/sudoku.js
 [norvig]: http://norvig.com
+[robatron]: https://github.com/robatron
 [anderson]: https://github.com/andermic/
 
 
