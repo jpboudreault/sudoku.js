@@ -107,7 +107,7 @@
     /*
      * Retroune un tableau qui représente la première colonne du sudoku. Pense aux index des élements que tu cherches.
      */
-    defi.retourneLaPremiereColone = function(sudoku){
+    defi.retourneLaPremiereColonne = function(sudoku){
        // ton code ici
     };
 
@@ -123,7 +123,7 @@
      *    2,0   2,1    2,2  ...
      *    3,0   3,1    3,2  ...
      */
-    defi.retourneUneColone = function(sudoku, colonne){
+    defi.retourneUneColonne = function(sudoku, colonne){
         // ton code ici
     };
 
