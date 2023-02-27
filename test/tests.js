@@ -41,14 +41,14 @@ test("retourneUneLigne", function(){
     deepEqual(s, expected, "Expect -> " + expected );
 });
 
-test("retourneLaPremiereColone", function(){
-    var s = defi.retourneLaPremiereColone(puzzles[1]);
+test("retourneLaPremiereColonne", function(){
+    var s = defi.retourneLaPremiereColonne(puzzles[1]);
     var expected = '198235647'.split("");
     deepEqual(s, expected, "Expect -> " + expected );
 });
 
-test("retourneUneColone", function(){
-    var s = defi.retourneUneColone(puzzles[1],1);
+test("retourneUneColonne", function(){
+    var s = defi.retourneUneColonne(puzzles[1],1);
     var expected = '756184293'.split("");
     deepEqual(s, expected, "Expect -> " + expected );
 });
@@ -63,4 +63,28 @@ test("retourneUnBloc", function(){
     var s = defi.retourneUnBloc(puzzles[1],7);
     var expected = '194732856'.split("");
     deepEqual(s, expected, "Expect -> " + expected );
+});
+
+test("tableauValide", function(){
+    var test = "987123456";
+    ok(defi.tableauValide(test.split("")), test + " -> doit être valide");
+
+    var test = "123456789";
+    ok(defi.tableauValide(test.split("")), test + " -> doit être valide");
+
+    var test = "234765789";
+    ok(!defi.tableauValide(test.split("")), test + " -> doit être invalide");
+
+    var test = "1234765789";
+    ok(!defi.tableauValide(test.split("")), test + " -> doit être invalide");
+});
+
+test("sudokuValide", function(){
+    var source = "174589362953261784862347951219673845387415296546928173628194537495732618731856429";
+    var game = sudoku.board_string_to_grid(source);
+    ok(defi.sudokuValide(game), source + " -> doit être valide");
+
+    var source = "174589362935261784862347951219673845387415296546928173628194537495732618731856429";
+    var game = sudoku.board_string_to_grid(source);
+    ok(!defi.sudokuValide(game), source + " -> doit être invalide");
 });

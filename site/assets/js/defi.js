@@ -126,7 +126,7 @@
     /*
      * Retroune un tableau qui représente la première colonne du sudoku. Pense aux index des élements que tu cherches.
      */
-    defi.retourneLaPremiereColone = function(sudoku){
+    defi.retourneLaPremiereColonne = function(sudoku){
        // ton code ici
       var s = [];
        for (let i = 0; i < 9; i++) {
@@ -147,7 +147,7 @@
      *    2,0   2,1    2,2  ...
      *    3,0   3,1    3,2  ...
      */
-    defi.retourneUneColone = function(sudoku, colonne){
+    defi.retourneUneColonne = function(sudoku, colonne){
       var s = [];
        for (let i = 0; i < 9; i++) {
          s[i] = sudoku[i][colonne];
@@ -254,6 +254,21 @@
      */
     defi.sudokuValide = function(sudoku){
         // ton code ici
+        var blocs = [];
+
+        for (let i = 0; i < 3; i++) {
+            blocs.push(defi.retourneUneLigne(sudoku, i));
+            blocs.push(defi.retourneUneColonne(sudoku, i));
+            blocs.push(defi.retourneUnBloc(sudoku, i));
+        }
+
+        for (let i = 0; i < blocs.length; i++) {
+            if (!defi.tableauValide(blocs[i])) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 
